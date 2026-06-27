@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Certificate | Bountify Capital Services</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0d1117; color: #c9d1d9; text-align: center; padding: 40px 20px; margin: 0; }
+        .container { max-width: 700px; background: #161b22; padding: 30px; border-radius: 12px; display: inline-block; box-shadow: 0 8px 24px rgba(0,0,0,0.5); border: 1px solid #30363d; }
+        .logo { font-size: 28px; font-weight: bold; color: #58a6ff; margin-bottom: 5px; letter-spacing: 1px; }
+        .sub-logo { font-size: 12px; color: #8b949e; margin-bottom: 25px; text-transform: uppercase; }
+        .badge { background: #238636; color: white; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 25px; }
+        .cert-img { max-width: 100%; height: auto; border-radius: 6px; border: 1px solid #30363d; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+        .details-grid { text-align: left; background: #0d1117; padding: 20px; border-radius: 8px; border: 1px solid #21262d; margin-bottom: 25px; }
+        .details-grid p { margin: 8px 0; font-size: 15px; }
+        .details-grid strong { color: #f0f6fc; }
+        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 12px 24px; border-radius: 6px; font-weight: 6px; font-size: 14px; cursor: pointer; border: none; font-weight: bold; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+        .btn-download { background: #238636; color: white; }
+        .btn-download:hover { background: #2ea043; }
+        .btn-share { background: #21262d; color: #c9d1d9; border: 1px solid #30363d; }
+        .btn-share:hover { background: #30363d; }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <div class="logo">Bountify</div>
+    <div class="sub-logo">Capital Services Private Limited</div>
+    
+    <div class="badge">✓ OFFICIAL VERIFIED ORIGINAL</div>
+    
+    <br>
+    <!-- Yahan Student ke Certificate Image ka link aayega -->
+    <img src="./ITCERT01.png" alt="Bountify Certificate" class="cert-img" id="certImage">
+
+    <div class="details-grid">
+        <p><strong>Certificate ID:</strong> <span id="certId">ITCERT01</span></p>
+        <p><strong>Issued To:</strong> <span id="studentName">Ayush Kumar</span></p>
+        <p><strong>Domain/Role:</strong> <span>Full Stack Intern</span></p>
+        <p><strong>Date of Issuance:</strong> <span>July 2026</span></p>
+    </div>
+
+    <div class="btn-group">
+        <!-- Download Button -->
+        <a id="downloadBtn" href="./ITCERT01.png" download="Bountify_Certificate.png" class="btn btn-download">
+            📥 Download Certificate
+        </a>
+        <!-- Share Button -->
+        <button onclick="shareCertificate()" class="btn btn-share">
+            🔗 Share Verification Link
+        </button>
+    </div>
+</div>
+
+<script>
+    function shareCertificate() {
+        const shareData = {
+            title: 'Bountify Certificate Verification',
+            text: 'Verify the authenticity of this Bountify Capital Services internship certificate.',
+            url: window.location.href
+        };
+        
+        if (navigator.share) {
+            navigator.share(shareData).catch(console.error);
+        } else {
+            navigator.clipboard.writeText(window.location.href);
+            alert('Verification link copied to clipboard!');
+        }
+    }
+</script>
+
+</body>
+</html>
